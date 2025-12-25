@@ -1,30 +1,27 @@
-# Enterprise System Architecture 2025
+# Enterprise Mobile & Cloud Solution 2025
 
-## 1. Жобаны басқару (Project Management)
-* **Әдістеме:** Scrum Framework
-* **Бақылау құралы:** GitHub Projects
-* **Күйі:** Тапсырмалар орындалды (Done)
+## 1. Project Management
+* **Framework:** Lean Software Development
+* **Management Tool:** GitHub Projects (Kanban Board)
+* **Status:** In Production
 
-## 2. Технологиялық шешімдер
-* **Frontend:** Vue.js
-* **Backend:** Node.js (TypeScript)
-* **Деректер қоры:** MongoDB
-* **Контейнерлеу:** Docker
-* **Оркестрация:** Kubernetes (K8s)
+## 2. Technology Infrastructure
+* **Mobile Frontend:** React Native
+* **Backend Services:** Java (Spring Boot)
+* **Database:** Redis & MySQL
+* **Cloud Platform:** Google Cloud Platform (GCP)
+* **Deployment:** Helm & Kubernetes
 
-## 3. Жүйенің архитектуралық схемасы
+## 3. System Architecture Diagram
 ```mermaid
-graph TD
-    Client((Клиент)) --> WebApp[Vue.js Web App]
-    WebApp --> Gateway[API Gateway]
-    Gateway --> Auth[Auth Service]
-    Gateway --> Core[Core Node.js API]
-    Core --> NoSQL[(MongoDB)]
+graph LR
+    App((Mobile App)) --> API[Cloud Endpoints]
+    API --> Logic[Spring Boot Microservices]
+    Logic --> Cache[(Redis Cache)]
+    Logic --> DB[(MySQL Cluster)]
     
-    subgraph "Infrastructure"
-        Docker[Docker Containers]
-        K8s[Kubernetes Cluster]
+    subgraph "DevOps Pipeline"
+        Git[GitHub] --> Action[GitHub Actions]
+        Action --> GCR[Google Container Registry]
+        GCR --> GKE[Google Kubernetes Engine]
     end
-    
-    Core --- Docker
-    Docker --- K8s
