@@ -17,4 +17,4 @@ graph LR
     CloudFront --> S3[S3 Bucket: Static Files]
     CloudFront --> EC2[EC2 Instance: Flask App]
     EC2 --> DB[(PostgreSQL)]
-    EC2 -.-> Mon[Monitoring: Prometheus]# ainur
+    EC2 -.-> Mon[Monitoring: Prometheus]
