@@ -1,27 +1,27 @@
-# Enterprise Mobile & Cloud Solution 2025
+# Real-time Data Processing System 2025
 
-## 1. Project Management
-* **Framework:** Lean Software Development
-* **Management Tool:** GitHub Projects (Kanban Board)
-* **Status:** In Production
+## 1. Project Planning
+* **Methodology:** Feature Driven Development (FDD)
+* **Workflow:** GitHub Projects with Automated Pipelines
+* **Sprint Progress:** Phase 3 Completed
 
-## 2. Technology Infrastructure
-* **Mobile Frontend:** React Native
-* **Backend Services:** Java (Spring Boot)
-* **Database:** Redis & MySQL
-* **Cloud Platform:** Google Cloud Platform (GCP)
-* **Deployment:** Helm & Kubernetes
+## 2. Solution Stack
+* **Language:** Python (FastAPI)
+* **Streaming:** Apache Kafka
+* **Storage:** Snowflake & MongoDB
+* **Cloud Infrastructure:** Microsoft Azure
+* **Container Management:** Azure Kubernetes Service (AKS)
 
-## 3. System Architecture Diagram
+## 3. Data Flow Architecture
 ```mermaid
-graph LR
-    App((Mobile App)) --> API[Cloud Endpoints]
-    API --> Logic[Spring Boot Microservices]
-    Logic --> Cache[(Redis Cache)]
-    Logic --> DB[(MySQL Cluster)]
+graph TD
+    Sensor((IoT Sensors)) --> Ingest[FastAPI Ingestion]
+    Ingest --> Stream{Apache Kafka}
+    Stream --> Processor[Data Processor]
+    Processor --> Cold[(Snowflake Data Warehouse)]
+    Processor --> Hot[(MongoDB Atlas)]
     
-    subgraph "DevOps Pipeline"
-        Git[GitHub] --> Action[GitHub Actions]
-        Action --> GCR[Google Container Registry]
-        GCR --> GKE[Google Kubernetes Engine]
+    subgraph "CI/CD Environment"
+        Git[Source Code] --> Build[Docker Build]
+        Build --> Deploy[AKS Deployment]
     end
