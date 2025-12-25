@@ -1,28 +1,29 @@
-# Қауіпсіз желілік инфрақұрылым жобасы 2025
+# AI-Powered Analytics System 2025
 
-## 1. Жобаны басқару (Management)
-* **Әдістеме:** Extreme Programming (XP)
-* **Бақылау құралы:** GitHub Projects тақтасы
-* **Орындалу деңгейі:** 100% аяқталды
+## 1. Жобаны басқару
+* **Әдістеме:** Agile Kanban
+* **Инструмент:** GitHub Projects Board
+* **Күйі:** Модельдерді оқыту кезеңі аяқталды
 
-## 2. Технологиялық құрам
-* **Backend:** Ruby on Rails
-* **Деректер қоры:** Redis & MariaDB
-* **Инфрақұрылым:** DigitalOcean Droplets
-* **Қауіпсіздік:** SSL/TLS & Cloudflare WAF
-* **Контейнерлеу:** Docker Compose
+## 2. Технологиялық құралдар
+* **Backend:** Python (Django)
+* **AI Framework:** PyTorch
+* **Деректер қоры:** PostgreSQL
+* **Бұлттық есептеулер:** AWS SageMaker
+* **Инфрақұрылым:** Terraform
 
-## 3. Желілік архитектура схемасы
+## 3. Модельдің жұмыс істеу схемасы
 ```mermaid
 graph TD
-    User((Пайдаланушы)) --> WAF[Cloudflare Firewall]
-    WAF --> LB[Load Balancer]
-    LB --> App1[Ruby Server 1]
-    LB --> App2[Ruby Server 2]
-    App1 & App2 --> Cache[(Redis Cache)]
-    App1 & App2 --> DB[(MariaDB Cluster)]
+    Data[Деректер жиынтығы] --> Model[AI Model Training]
+    Model --> API[Django REST API]
+    API --> Frontend[Web Interface]
+    API --> DB[(PostgreSQL)]
     
-    subgraph "Security Layer"
-        WAF
-        LB
+    subgraph "Cloud Intelligence"
+        AWS[AWS SageMaker]
+        GPU[GPU Clusters]
     end
+    
+    Model --- AWS
+    AWS --- GPU
