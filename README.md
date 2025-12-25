@@ -1,20 +1,30 @@
-# Cloud Infrastructure Project (Project 02)
+# Enterprise System Architecture 2025
 
-## 1. Жобаны жоспарлау
-* **Құралдар:** JIRA
-* **Әдістеме:** Kanban
+## 1. Жобаны басқару (Project Management)
+* **Әдістеме:** Scrum Framework
+* **Бақылау құралы:** GitHub Projects
+* **Күйі:** Тапсырмалар орындалды (Done)
 
-## 2. Технологиялық стек
-* **Frontend:** React
-* **Backend:** Python (Flask)
-* **Cloud:** AWS (EC2, S3)
-* **Monitoring:** Prometheus & Grafana
+## 2. Технологиялық шешімдер
+* **Frontend:** Vue.js
+* **Backend:** Node.js (TypeScript)
+* **Деректер қоры:** MongoDB
+* **Контейнерлеу:** Docker
+* **Оркестрация:** Kubernetes (K8s)
 
-## 3. Архитектуралық диаграмма
+## 3. Жүйенің архитектуралық схемасы
 ```mermaid
-graph LR
-    User((Пайдаланушы)) --> CloudFront[AWS CloudFront]
-    CloudFront --> S3[S3 Bucket: Static Files]
-    CloudFront --> EC2[EC2 Instance: Flask App]
-    EC2 --> DB[(PostgreSQL)]
-    EC2 -.-> Mon[Monitoring: Prometheus]
+graph TD
+    Client((Клиент)) --> WebApp[Vue.js Web App]
+    WebApp --> Gateway[API Gateway]
+    Gateway --> Auth[Auth Service]
+    Gateway --> Core[Core Node.js API]
+    Core --> NoSQL[(MongoDB)]
+    
+    subgraph "Infrastructure"
+        Docker[Docker Containers]
+        K8s[Kubernetes Cluster]
+    end
+    
+    Core --- Docker
+    Docker --- K8s
